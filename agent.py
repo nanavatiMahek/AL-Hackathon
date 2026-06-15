@@ -23,12 +23,12 @@ def extract_pdf_text(pdf_path, max_chars=2000):
     except:
         return ""
 
-# old		
+# ── Existing 3 PDFs ───────────────────────────────────────────────────────────
 rti_act        = extract_pdf_text("rti_act.pdf")
 consumer_act   = extract_pdf_text("consumer_act.pdf")
 rti_fees       = extract_pdf_text("rti_fees.pdf")
 
-#  new
+# ── 4 New PDFs ────────────────────────────────────────────────────────────────
 constitution   = extract_pdf_text("CONSTITUTION OF INDIA.pdf")
 cpio           = extract_pdf_text("CPIO.pdf")
 rti_misuse     = extract_pdf_text("rti misue order.pdf")

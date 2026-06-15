@@ -3,7 +3,7 @@ from agent import chat_with_agent
 
 st.set_page_config(
     page_title="Verity",
-    page_icon=":balance_scale:",
+    page_icon="⚖️",
     layout="centered"
 )
 
@@ -48,7 +48,7 @@ st.markdown("""
     .info-cards {
         display: flex;
         gap: 10px;
-        margin: 0rem 0 1.8rem 0;
+        margin: 0rem 0 1.6rem 0;
         flex-wrap: wrap;
     }
     .info-card {
@@ -175,27 +175,22 @@ st.markdown("""
     .chip:hover { background: rgba(255,215,0,0.18); }
 
     .stChatInput textarea,
-    .stChatInput input {
-        background: #1a1a2e !important;
-        border: 1px solid rgba(255,215,0,0.2) !important;
-        border-radius: 12px !important;
-        color: white !important;
-        font-family: 'Inter', sans-serif !important;
-        padding-left: 16px !important;
-        text-indent: 6px !important;
-    }
+.stChatInput input {
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    border-radius: 12px !important;
+    color: red !important;
+    font-family: 'Inter', sans-serif !important;
+    padding-left: 16px !important;
+    text-indent: 6px !important;
+}
+    
+    
     .stChatInput textarea::placeholder,
-    .stChatInput input::placeholder {
-        color: rgba(255,215,0,0.5) !important;
-        font-family: 'Inter', sans-serif !important;
-        font-size: 0.88rem !important;
-    }
-    .stChatInput {
-        background: transparent !important;
-    }
-    div[data-testid="stBottom"] {
-        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e) !important;
-        border-top: 1px solid rgba(255,215,0,0.08) !important;
+.stChatInput input::placeholder {
+    color: rgba(255, 80, 80, 0.8) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.88rem !important;
     }
 
     .stChatMessage { display: none !important; }
@@ -265,7 +260,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
     st.session_state.messages.append({
         "role": "assistant",
-        "content": "Namaste! I'm Verity. I help Indian citizens file RTI requests and consumer complaints.\n\nTell me your problem in simple words — have you been wronged by a government office, a company, or something else?"
+        "content": "Namaste 🙏\nFile RTI requests and consumer complaints hustle free.\nTell me your problem in simple words — have you been wronged by a company, government office or something else?"
     })
 if "suggestions_used" not in st.session_state:
     st.session_state.suggestions_used = False
@@ -329,7 +324,7 @@ chat_html += '</div>'
 st.markdown(chat_html, unsafe_allow_html=True)
 
 # ── Chat input ──
-if user_input := st.chat_input("Describe your problem here..."):
+if user_input := st.chat_input("✦ Describe your problem here..."):
     st.session_state.suggestions_used = True
     st.session_state.messages.append({"role": "user", "content": user_input})
     with st.spinner("Analyzing your case..."):
