@@ -275,7 +275,7 @@ For issues, suggestions, or feedback, please open an issue in the repository.
 
 ## 🙏 Acknowledgments
 
-- Built during **Mahke Hackathon**
+- Built during **Hackathon**
 - Powered by **GitHub Models** and **OpenAI**
 - Dedicated to making justice more accessible for all Indian citizens
 
