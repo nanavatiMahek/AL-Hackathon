@@ -6,8 +6,8 @@ import PyPDF2
 load_dotenv()
 
 client = OpenAI(
-    base_url="https://models.inference.ai.azure.com",
-    api_key=os.getenv("GITHUB_TOKEN")
+    base_url="https://api.groq.com/openai/v1",
+    api_key=os.getenv("GROQ_API_KEY")
 )
 
 def extract_pdf_text(pdf_path, max_chars=2000):
@@ -83,7 +83,7 @@ Never give false legal advice. For complex cases recommend a lawyer.
 
 def chat_with_agent(messages):
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="llama-3.3-70b-versatile",
         messages=[{"role": "system", "content": SYSTEM_PROMPT}] + messages,
         temperature=0.7,
         max_tokens=1000
